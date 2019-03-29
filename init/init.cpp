@@ -454,7 +454,6 @@ static selinux_enforcing_status selinux_status_from_cmdline() {
     return status;
 }
 
-/*
 static bool selinux_is_enforcing(void)
 {
     if (ALLOW_PERMISSIVE_SELINUX) {
@@ -462,7 +461,6 @@ static bool selinux_is_enforcing(void)
     }
     return true;
 }
-*/
 
 int selinux_reload_policy(void)
 {

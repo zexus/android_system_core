@@ -22,7 +22,7 @@ endif
 
 init_cflags += \
     $(init_options) \
-    -Wall -Wextra \
+    -Wextra \
     -Wno-unused-parameter \
     -Werror \
 
