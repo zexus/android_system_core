@@ -454,6 +454,7 @@ static selinux_enforcing_status selinux_status_from_cmdline() {
     return status;
 }
 
+/*
 static bool selinux_is_enforcing(void)
 {
     if (ALLOW_PERMISSIVE_SELINUX) {
@@ -461,6 +462,7 @@ static bool selinux_is_enforcing(void)
     }
     return true;
 }
+*/
 
 int selinux_reload_policy(void)
 {
@@ -517,7 +519,7 @@ static void selinux_initialize(bool in_kernel_domain) {
         }
 
         bool kernel_enforcing = (security_getenforce() == 1);
-        bool is_enforcing = selinux_is_enforcing();
+        bool is_enforcing = false;
         if (kernel_enforcing != is_enforcing) {
             if (security_setenforce(is_enforcing)) {
                 ERROR("security_setenforce(%s) failed: %s\n",
